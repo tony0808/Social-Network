@@ -95,3 +95,24 @@ function deletePost(postid) {
 
     return false;
 }
+
+function likePost(postid) {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4) {
+            if (xhttp.status === 200) {
+                location.href = '/user/post/other/' + postid;
+            }
+            else {
+
+            }
+        }
+    };
+
+    xhttp.open("POST", domain + "user/post/like/" + postid);
+    xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+    xhttp.send();
+
+    return false;
+}

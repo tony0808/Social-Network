@@ -9,7 +9,9 @@
         <div>
             <p><%= post.title %></p>
             <p><%= post.desc %></p>
+            <p>Likes: <%= likes.length %></p>
         </div>
+        <button type='button' onclick="likePost('<%= post.id %>')">Like</button>
     <% } %>
     <script type="text/javascript" src="/scripts.js"></script>
     <%- include('./partials/footer.ejs') %>

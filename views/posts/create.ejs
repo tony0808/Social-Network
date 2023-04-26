@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <h1>My Network</h1>
+    <%- include('./partials/nav.ejs') %>
+    <h2>Create new post</h2>
+    <form id="post-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+  
+        <label for="description">Description:</label>
+        <textarea id="description" name="desc"></textarea><br>
+  
+        <button type="button" onclick="createPost()">Create</button>
+    </form>
+    <script type="text/javascript" src="/scripts.js"></script>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

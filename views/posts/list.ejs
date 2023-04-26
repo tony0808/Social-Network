@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <h1>My Network</h1>
+    <%- include('./partials/nav.ejs') %>
+    <h2>My Posts</h2> 
+    <a href="/user/post/new">Create Post</a>
+    <% if (locals.posts) { %>
+        <% for(let i=0; i<posts.length; i++) { %>
+            <div>
+                <a href="/user/post/<%= posts[i].id %>"><%= posts[i].title %></a>
+            </div>
+        <% } %>
+    <% } %>
+    <script type="text/javascript" src="/scripts.js"></script>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

@@ -21,7 +21,7 @@ const userAuth = (req, res, next) => {
 }
 
 const checkUser = (req, res, next) => {
-    const token = req.cookies.token;
+    const token = req.cookies.jwt;
     if (!token) {
         res.locals.user = null;
         next();

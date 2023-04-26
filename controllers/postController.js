@@ -11,7 +11,12 @@ const get_create_post_page = (req, res) => {
 
 const get_post_page = async (req, res) => {
     const post = await Post.findOne({ _id: req.params.id });
-    res.render('posts/view', { title: 'View post', post });
+    res.render('posts/viewOwn', { title: 'View post', post });
+};
+
+const get_post_other_page = async (req, res) => {
+    const post = await Post.findOne({ _id: req.params.id }).populate('user', 'fname lname');
+    res.render('posts/viewOther', { title: 'View post', post });
 };
 
 const create_post = async (req, res) => {
@@ -41,6 +46,7 @@ const delete_post = async (req, res) => {
 module.exports = {
     get_posts_list_page,
     get_create_post_page,
+    get_post_other_page,
     get_post_page,
     create_post,
     delete_post,

@@ -4,6 +4,18 @@
 <body>
     <h1>My Network</h1>
     <%- include('./partials/nav.ejs') %>
+    <h2>Latest posts</h2>
+    <% if(locals.latest_posts) { %>
+        <div>
+        <% for(let i=0; i<latest_posts.length; i++) { %>
+            <div>
+                <h3>Post from : <%= latest_posts[i].user.fname%> <%= latest_posts[i].user.lname %></h3>
+                <p><%= latest_posts[i].title %></p>
+                <a href="/user/post/other/<%= latest_posts[i].id %>">view</a>
+            </div>
+        <% } %>
+        </div>
+    <% } %>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>

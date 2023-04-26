@@ -8,7 +8,7 @@ const createToken = (id) => {
     return jwt.sign({ id }, `${process.env.USER_SECRET}`, { expiresIn: maxAge });
 }
 
-const get_index_page = (req, res) => {
+const get_index_page = async (req, res) => {
     res.render('index/index', { title: 'index' });
 };
 
